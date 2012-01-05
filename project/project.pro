@@ -11,30 +11,25 @@ TEMPLATE = app
 
 
 SOURCES += \
-    ../Viewer/src/String.cpp \
-    ../Viewer/src/square.cpp \
     ../Viewer/src/shape.cpp \
     ../Viewer/src/numberbox.cpp \
     ../Viewer/src/mainwindow.cpp \
     ../Viewer/src/main.cpp \
     ../Viewer/src/Line.cpp \
-    ../Viewer/src/Digit.cpp \
-    ../Viewer/src/circle.cpp \
-    ../VarBase/src/lib.cpp
+    ../VarBase/src/basecode.cpp \
+    ../Viewer/src/Elements.cpp
 
 HEADERS  += \
-    ../Viewer/include/ui_mainwindow.h \
-    ../Viewer/include/String.h \
-    ../Viewer/include/square.h \
     ../Viewer/include/shape.h \
     ../Viewer/include/numberbox.h \
     ../Viewer/include/mainwindow.h \
     ../Viewer/include/Line.h \
-    ../Viewer/include/Digit.h \
-    ../Viewer/include/circle.h \
-    ../VarBase/include/basecode.h
+    ../VarBase/include/basecode.h \
+    ../Viewer/include/Elements.h
 
 FORMS    +=
 
 OTHER_FILES += \
-    varbase.xml
+    varbase.xml \
+    ../project-build-desktop/varbase.xml \
+    ../project-build-desktop/elements.xml

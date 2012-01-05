@@ -1,22 +1,34 @@
 #include "../include/String.h"
+#include <qtextstream.h>
 
-String::String(char* mas)
+String::String(string name, const char* ndata)
 {
-    data=mas;
+ StringVar *v;
+ lib=MkSM();
+ lib->Load();
+ if((v=(StringVar*)lib->Find(name))==0)
+ {
+  lib->Create(name, ndata);
+  lib->Save();
+  v=(StringVar*)lib->Find(name);
+ }
+ setData(name, v->getValue().c_str());// c_str() переводит string в const char *
 }
 
-int String::setData(char* ndata)
+void String::setData(string name, const char* ndata)
 {
+ lib->Delete(name);
  data=ndata;
- return 0;
+ lib->Create(name, data);
+ lib->Save();
 }
 
-char* String::getData()
+const char* String::getData()
 {
  return data;
 }
 
-int String::setX(int nx)
+/*int String::setX(int nx)
 {
  x=nx;
  return 0;
@@ -26,12 +38,13 @@ int String::setY(int ny)
 {
  y=ny;
  return 0;
-}
+}*/
 
-void String::show(QPainter *p)
+void String::show(QPainter *p, int x, int y)
 {
  QString a;
  a=QString::fromLocal8Bit(data);
+ QPen pen("BLACK");
+ p->setPen(pen);
  p->drawText(x,y,a);
- //return a;
 }

@@ -3,20 +3,19 @@
 #define STRING_H
 #include <QString>
 #include <qpainter.h>
+#include "../Viewer/include/mainwindow.h"
+#include <cstring>
 
-class String
+class String: public MainWindow
 {
- int x, y; //координаты в окне
- char* data;
+ const char* data;
 
  public:
-  String(){};
-  String(char *mas);
+  String(string name, const char* ndata);
 
-  int setData(char* ndata);
-  int setX(int nx);
-  int setY(int ny);
-  char* getData();
-  void show(QPainter *p);
+  const char* getVarFromBase(string name, const char* newval);
+  void setData(string name, const char* ndata);
+  const char* getData();
+  void show(QPainter *p, int x, int y);
 };
 #endif

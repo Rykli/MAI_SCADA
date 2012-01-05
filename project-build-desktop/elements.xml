@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diargam name="ElBase">
+<element type="1" x1="line1_x1" y1="line1_y1" x2="line1_x2" y2="line1_y2" color="RED"> Элемент 1</element>
+<element type="1" x1="line1_x2" y1="line1_x1" x2="line1_y1" y2="line1_y2" color="GREEN"> Элемент 2</element>
+<element type="1" x1="line1_y1" y1="line1_x2" x2="line1_y2" y2="line1_x1" color="RED"> Элемент 3</element>
+</diagram>
