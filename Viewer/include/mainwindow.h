@@ -5,6 +5,8 @@
 #include <qgraphicsscene.h>
 #include <QMainWindow>
 #include "../VarBase/include/basecode.h"
+#include "../include/numberbox.h"
+#include <QPushButton>
 
 class MainWindow : public QMainWindow
 {
@@ -18,9 +20,12 @@ public:
     void paintEvent(QPaintEvent *);
 
 private:
+    QPushButton *A;
+    NumberBox *nb;
 
-/*private slots:
-    void on_pushButton_clicked();*/
+private slots:
+    void btnclicked();
+    void enableButton(int);
 };
 
 #endif // MAINWINDOW_H

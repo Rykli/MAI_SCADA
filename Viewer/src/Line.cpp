@@ -15,14 +15,14 @@ int Line::gfb(string name)
  return v->getValue();
 }
 
+void Line::setcolor(QColor ncolor)
+{
+ color=ncolor;
+}
+
 void Line::show(QPainter *p)
 {
  QPen pen(color);
  p->setPen(pen);
  p->drawLine(x1, y1, x2, y2);
-}
-
-void Line::setcolor(QColor ncolor)
-{
-    color=ncolor;
 }

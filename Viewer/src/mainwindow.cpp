@@ -1,14 +1,6 @@
 #include "../include/mainwindow.h"
-//#include "ui_mainwindow.h"
-#include "../include/circle.h"
-#include "../include/square.h"
-#include "../include/numberbox.h"
-#include "../include/Line.h"
-#include "../include/String.h"
-#include "../include/IntDigit.h"
-#include "../include/DoubleDigit.h"
-#include "../include/Ellipse.h"
 #include "../include/Elements.h"
+#include "../include/button.h"
 #include <ctime>
 
 #define rnd(a, b) (a)+random()%((b)-(a))
@@ -16,16 +8,55 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
- NumberBox *nb=new NumberBox(this);
+
+
+ QString k="OK", *l;
+ l=&k;
+ nb=new NumberBox(this);
+ //Button * A= new Button(l,this);
+ A= new QPushButton(tr("OK"),this);
+ connect(A, SIGNAL(clicked()), nb, SLOT(btnClicked()) );
+ //connect(nb, SIGNAL(valueChanged(int)), this, SLOT(enableButton(int)));
  nb->show();
+ A->show();
  nb->move(230,150);
- resize(400,200);
+ A->move(350,150);
+ resize(500,200);
+
 }
+
+void MainWindow::btnclicked()
+{
+ int k=nb->text().toInt();
+ nb->clear();
+ IntVar *v;
+ lib=ConnectToSharedMemory();
+ if(v=(IntVar*)lib->Find("circle1_x"))
+ {
+  lib->Delete("circle1_x");
+  lib->Create("circle1_x", k);
+  lib->Save();
+ }
+ else
+ {
+  lib->Create("circle1_x",k);
+  lib->Save();
+ }
+ lib->Load();
+}
+    //return v->getValue();*/
+
+//}
+
+/*MainWindow::enableButton(int k)
+{
+    A->setEnabled
+}*/
+
 
 MainWindow::~MainWindow()
 {
 }
-
 void MainWindow::paintEvent(QPaintEvent *)
 {
  QPainter p1(this);

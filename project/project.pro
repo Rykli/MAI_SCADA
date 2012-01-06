@@ -17,7 +17,14 @@ SOURCES += \
     ../Viewer/src/main.cpp \
     ../Viewer/src/Line.cpp \
     ../VarBase/src/basecode.cpp \
-    ../Viewer/src/Elements.cpp
+    ../Viewer/src/Elements.cpp \
+    ../Viewer/src/circle.cpp \
+    ../Viewer/src/square.cpp \
+    ../Viewer/src/Ellipse.cpp \
+    ../Viewer/src/IntDigit.cpp \
+    ../Viewer/src/DoubleDigit.cpp \
+    ../Viewer/src/String.cpp \
+    ../Viewer/src/Button.cpp
 
 HEADERS  += \
     ../Viewer/include/shape.h \
@@ -25,7 +32,14 @@ HEADERS  += \
     ../Viewer/include/mainwindow.h \
     ../Viewer/include/Line.h \
     ../VarBase/include/basecode.h \
-    ../Viewer/include/Elements.h
+    ../Viewer/include/Elements.h \
+    ../Viewer/include/circle.h \
+    ../Viewer/include/square.h \
+    ../Viewer/include/Ellipse.h \
+    ../Viewer/include/IntDigit.h \
+    ../Viewer/include/DoubleDigit.h \
+    ../Viewer/include/String.h \
+    ../Viewer/include/button.h
 
 FORMS    +=
 

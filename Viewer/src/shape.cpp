@@ -12,57 +12,8 @@ Shape::Shape()
     color = initColor;
 }*/
 
-void Shape::move(int newX, int newY)
-{
-    x = newX;
-    y = newY;
-}
+void Shape::show(QPainter *p){};
 
-void Shape::hide()
-{
-    isVisible = false;
-}
-
-void Shape::show(QPainter *p)
-{
-
-    isVisible = true;
-}
-
-int Shape::getX()
-{
-    return x;
-}
-
-int Shape::getY()
-{
-    return y;
-}
-
-int Shape::getX1()
-{
-    return x1;
-}
-
-int Shape::getY1()
-{
-    return y1;
-}
-
-int Shape::getX2()
-{
-    return x2;
-}
-
-int Shape::getY2()
-{
-    return y2;
-}
-
-int Shape::getTypeID()
-{
-    return type_id;
-}
 
 void Shape::setTypeID(int newID)
 {
@@ -99,7 +50,38 @@ void Shape::setY2(int newY2)
  y2=newY2;
 }
 
-bool Shape::checkIsVisible()
+void Shape::setR(int newR)
 {
-    return isVisible;
+ r=newR;
 }
+
+void Shape::setA(int newA)
+{
+ a=newA;
+}
+
+void Shape::setR1(int newR1)
+{
+ r1=newR1;
+}
+
+void Shape::setR2(int newR2)
+{
+ r2=newR2;
+}
+
+void Shape::setIval(int newIval)
+{
+ ival=newIval;
+}
+
+void Shape::setDval(double newDval)
+{
+ dval=newDval;
+}
+
+void Shape::setSval(const char* newSval)
+{
+ sval=newSval;
+}
+

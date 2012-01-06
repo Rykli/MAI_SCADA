@@ -16,7 +16,6 @@ class Line: public Shape
 
   void setcolor(QColor ncolor);
   void show(QPainter *painter);
-  int getVarFromBase(string name, int newval);
   int gfb(string name);
 };
 #endif
